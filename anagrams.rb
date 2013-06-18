@@ -1,3 +1,5 @@
+#is there a way to exit the each loop early if we find a letter is not included? ##now implemented
+
 def anagrams(words)
 	
 	@yesno= false
@@ -31,10 +33,12 @@ def anagrams(words)
 							@yesno=false
 						else	
 							@a.each do |x|
-								if words[y].include?(x)
-									@yesno=true
+							included = words[y].include?(x)
+							 	if !included
+									break
+									
 								else
-									@yesno=false
+									@yesno=true
 								end
 							end	
 
@@ -84,5 +88,6 @@ def anagrams(words)
 	end
 
 end #end of def
-		
+
+
 
